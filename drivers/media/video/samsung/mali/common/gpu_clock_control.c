@@ -104,8 +104,10 @@ static ssize_t gpu_clock_store(struct device *dev, struct device_attribute *attr
 			mali_dvfs[i].clock = g[i];
 		}
 
+#ifndef CONFIG_GPU_CONTROL_LEGACYMODE
 		// Yank555.lu : reupdate mali dvfs table
 		mali_dvfs_table_update();
+#endif
 
 	}
 

@@ -50,9 +50,13 @@ static ssize_t gpu_voltage_show(struct device *dev, struct device_attribute *att
 
 	if(buf) {
 		for(i = 0; i < MALI_DVFS_STEPS; i++)
+#ifndef CONFIG_GPU_CONTROL_LEGACYMODE
 			// Yank555.lu : Use steps 0-4 as above to keep this consistent with gpu_clock_control
 			//               and display the freq. of the step since we can change them
 			len += sprintf(buf + len, "Step%d (%dMHz): %d\n", i, mali_dvfs[i].clock, mali_dvfs[i].vol);
+#else
+			len += sprintf(buf + len, "Step%d: %d\n", i+1, mali_dvfs[i].vol);
+#endif
 	}
 	return len;
 }

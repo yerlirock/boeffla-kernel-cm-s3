@@ -77,3 +77,11 @@ config GPU_VOLTAGE_WRITE_CONTROL
   	help
     	  This enables the sysfs interface to control gpu voltage in read/write (Yank555.lu).
 
+config GPU_CONTROL_LEGACYMODE
+  	bool "Enable legacy interface for GPU control"
+  	depends on GPU_CLOCK_CONTROL
+  	default n
+  	help
+    	  The legacy interface mode avoids voltage updates when changing GPU frequencies
+    	  and formats output of gpu_voltage_control interface as original implementations
+    	  
