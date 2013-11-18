@@ -1,0 +1,40 @@
+From 94bde3b291948f9c567e03ca6a061cb5d2f95be4 Mon Sep 17 00:00:00 2001
+From: andip71 <andreasp@gmx.de>
+Date: Tue, 24 Sep 2013 17:28:48 +0200
+Subject: [PATCH] 2
+
+---
+ init.rc | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/init.rc b/init.rc
+index d8e960a..f943f6c 100755
+--- a/init.rc
++++ b/init.rc
+@@ -49,8 +49,8 @@ loglevel 3
+     export ANDROID_STORAGE /storage
+     export ASEC_MOUNTPOINT /mnt/asec
+     export LOOP_MOUNTPOINT /mnt/obb
+-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/telephony-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar
+-
++    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/framework_ext.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar
++    
+ # Backward compatibility
+     symlink /system/etc /etc
+     symlink /sys/kernel/debug /d
+@@ -577,3 +577,12 @@ service mdnsd /system/bin/mdnsd
+     socket mdnsd stream 0660 mdnsr inet
+     disabled
+     oneshot
++
++# Call Boeffla-Kernel init script
++service boeffla-init /sbin/boeffla-init.sh
++    class core
++    user root
++    oneshot
++
++service shelld /system/xbin/shelld
++        class main
+-- 
+1.8.1.2
+
