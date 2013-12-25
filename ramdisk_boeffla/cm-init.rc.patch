@@ -22,15 +22,16 @@ index d8e960a..f943f6c 100755
  # Backward compatibility
      symlink /system/etc /etc
      symlink /sys/kernel/debug /d
-@@ -577,3 +577,12 @@ service mdnsd /system/bin/mdnsd
+@@ -577,3 +577,13 @@ service mdnsd /system/bin/mdnsd
      socket mdnsd stream 0660 mdnsr inet
      disabled
      oneshot
 +
 +# Call Boeffla-Kernel init script
 +service boeffla-init /sbin/boeffla-init.sh
-+    class core
++    class main
 +    user root
++    group root
 +    oneshot
 +
 +service shelld /system/xbin/shelld
