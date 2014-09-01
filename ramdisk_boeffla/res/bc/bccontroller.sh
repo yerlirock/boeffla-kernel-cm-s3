@@ -1,8 +1,10 @@
 # Boeffla-Config controller interface
 #
-# Version: GPU 5 frequencies
+# *****************************
+# i9300 Cyanogenmod 11 NG version
 #
-# (C) andip71
+# V0.1
+# *****************************
 
 # ********************************
 # Kernel specific initialisation
@@ -17,8 +19,7 @@ KERNEL_SPECS="i9300;cm;cm11.0;http://boeffla.df-kunde.de/sgs3/boeffla-kernel-cm-
 KERNEL_FEATURES="-1-2-3-"
 
 # path to kernel libraries
-#LIBPATH="/lib/modules"				# Samsung
-LIBPATH="/system/lib/modules"		# Cyanogenmod+Omni
+LIBPATH="/system/lib/modules"
 
 # block devices
 SYSTEM_DEVICE="/dev/block/mmcblk0p9"
