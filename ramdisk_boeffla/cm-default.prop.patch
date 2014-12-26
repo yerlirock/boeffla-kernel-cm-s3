@@ -1,14 +1,14 @@
-From ed86f00a30b929612e48623d6cf11270681cb910 Mon Sep 17 00:00:00 2001
+From a0ac7241cb02f8d13ad76e49e0979485f6c7ac96 Mon Sep 17 00:00:00 2001
 From: andip71 <andreasp@gmx.de>
-Date: Mon, 30 Sep 2013 10:16:59 +0200
-Subject: [PATCH] nach
+Date: Tue, 23 Dec 2014 11:07:09 +0100
+Subject: [PATCH] 3
 
 ---
  default.prop | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/default.prop b/default.prop
-index d1906dc..8f75cd0 100644
+index 7a88b71..ae70c53 100644
 --- a/default.prop
 +++ b/default.prop
 @@ -1,8 +1,8 @@
@@ -21,7 +21,7 @@ index d1906dc..8f75cd0 100644
 +ro.secure=0
  ro.allow.mock.location=0
  ro.debuggable=1
- persist.sys.usb.config=mtp,adb
+ ro.zygote=zygote32
 -- 
-1.8.1.2
+1.9.1
 

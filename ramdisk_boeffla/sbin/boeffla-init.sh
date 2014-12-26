@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 # *****************************
-# i9300 Cyanogenmod 11 NG version
+# i9300 Cyanogenmod 12 NG version
 #
 # V0.1
 # *****************************
