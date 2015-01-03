@@ -21,18 +21,6 @@ index b0f4bc7..1b12f3c 100755
      # Directory for putting things only root should see.
      mkdir /mnt/secure 0700 root root
  
-@@ -349,9 +352,9 @@ on boot
-     write /proc/sys/vm/overcommit_memory 1
-     write /proc/sys/vm/min_free_order_shift 4
-     chown root system /sys/module/lowmemorykiller/parameters/adj
--    chmod 0220 /sys/module/lowmemorykiller/parameters/adj
-+    chmod 0660 /sys/module/lowmemorykiller/parameters/adj
-     chown root system /sys/module/lowmemorykiller/parameters/minfree
--    chmod 0220 /sys/module/lowmemorykiller/parameters/minfree
-+    chmod 0660 /sys/module/lowmemorykiller/parameters/minfree
- 
-     # Tweak background writeout
-     write /proc/sys/vm/dirty_expire_centisecs 200
 @@ -655,3 +658,10 @@ service pre-recovery /system/bin/uncrypt
      class main
      disabled
