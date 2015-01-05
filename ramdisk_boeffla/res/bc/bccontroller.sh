@@ -16,7 +16,7 @@ KERNEL_SPECS="i9300;cm;cm12.0;http://boeffla.df-kunde.de/sgs3/boeffla-kernel-cm-
 # kernel features 
 # (1=enable-busybox,2=enable-frandom,3=wipe-cache,4=disable-zram-control)
 # (5=enable-default-zram-control)
-KERNEL_FEATURES="-2-3-"
+KERNEL_FEATURES="-3-"
 
 # path to kernel libraries
 LIBPATH="/system/lib/modules"
