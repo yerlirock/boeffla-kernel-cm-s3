@@ -1,6 +1,6 @@
 // MELFAS HEX to C converter v1.6 [2008.05.25]
  const size_t MELFAS_binary_nLength = 0x7C00;	// 31.0 KBytes ( 31744 Bytes ) 
-const u8 MELFAS_binary[] = { 
+const u8 MELFAS_binary[] = { 
 	    // Model name       : u
 	    // Module revision  : u
 	    // Firmware version : u
@@ -3181,4 +3181,4 @@
 	    0x00, 0x45, 0x11, 
 };
 
-
+

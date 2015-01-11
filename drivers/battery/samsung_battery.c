@@ -72,18 +72,6 @@ static void battery_error_control(struct battery_info *info);
 unsigned int lpcharge;
 static int battery_get_lpm_state(char *str)
 {
-	if (strncmp(str, "1", 1) == 0)
-		lpcharge = 1;
-
-	pr_info("%s: Low power charging mode: %d\n", __func__, lpcharge);
-
-	return lpcharge;
-}
-__setup("lpcharge=", battery_get_lpm_state);
-
-/* For KitKat bootloader compatibility */
-static int bootloader_get_lpm_state(char *str)
-{
 	if (strncmp(str, "charger", 7) == 0)
 		lpcharge = 1;
 
@@ -91,12 +79,25 @@ static int bootloader_get_lpm_state(char *str)
 
 	return lpcharge;
 }
-__setup("androidboot.mode=", bootloader_get_lpm_state);
+__setup("androidboot.mode=", battery_get_lpm_state);
+
+/* For JB bootloader compatibility */
+static int bootloader_get_lpm_state(char *str)
+{
+	if (strncmp(str, "1", 1) == 0)
+		lpcharge = 1;
+
+	pr_info("%s: Low power charging mode: %d\n", __func__, lpcharge);
+
+	return lpcharge;
+}
+__setup("lpcharge=", bootloader_get_lpm_state);
+
 EXPORT_SYMBOL(lpcharge);
 
-#if defined(CONFIG_MACH_KONA)		
+#if defined(CONFIG_MACH_KONA)
 extern bool mhl_connected;
-#endif		
+#endif
 
 /* Cable type from charger or adc */
 static int battery_get_cable(struct battery_info *info)
@@ -1332,8 +1333,24 @@ static void battery_indicator_icon(struct battery_info *info)
 
 #if defined(CONFIG_MACH_KONA)
 		if (info->cable_type == POWER_SUPPLY_TYPE_USB) {
+		if(info->lpm_state == true)
+		{
+		    if(info->battery_soc == 100)
+			{
+				info->charge_virt_state =
+					POWER_SUPPLY_STATUS_FULL;
+			}
+			else
+			{
 			info->charge_virt_state =
+				POWER_SUPPLY_STATUS_CHARGING;
+			}
+		}
+		else
+		{
+		info->charge_virt_state =
 				POWER_SUPPLY_STATUS_DISCHARGING;
+		}
 		}
 #endif
 #if 0
