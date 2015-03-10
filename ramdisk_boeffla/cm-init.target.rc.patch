@@ -1,0 +1,31 @@
+From b9c16a3ff8855bb13c88297207e94a290d6e97df Mon Sep 17 00:00:00 2001
+From: andip71 <andreasp@gmx.de>
+Date: Tue, 10 Mar 2015 11:27:34 +0100
+Subject: [PATCH] 2
+
+---
+ init.target.rc | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/init.target.rc b/init.target.rc
+index 845e484..e8fd80b 100755
+--- a/init.target.rc
++++ b/init.target.rc
+@@ -49,10 +49,10 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+     group system inet sdcard_rw
+ 
+ # ZRAM configuration file
+-service configure_zram /system/bin/configure_zram
+-    class late_start
+-    user root
+-    oneshot
++#service configure_zram /system/bin/configure_zram
++#    class late_start
++#    user root
++#    oneshot
+ 
+ # LMK
+ on property:init.svc.bootanim=stopped
+-- 
+1.9.1
+

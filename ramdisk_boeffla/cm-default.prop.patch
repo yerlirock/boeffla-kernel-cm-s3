@@ -1,17 +1,17 @@
-From a0ac7241cb02f8d13ad76e49e0979485f6c7ac96 Mon Sep 17 00:00:00 2001
+From cfc5e64adadcba860f4f483dafef94a3e7886aa5 Mon Sep 17 00:00:00 2001
 From: andip71 <andreasp@gmx.de>
-Date: Tue, 23 Dec 2014 11:07:09 +0100
-Subject: [PATCH] 3
+Date: Tue, 10 Mar 2015 11:15:28 +0100
+Subject: [PATCH] 2
 
 ---
- default.prop | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ default.prop | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/default.prop b/default.prop
-index 7a88b71..ae70c53 100644
+index 2884f32..ae70c53 100644
 --- a/default.prop
 +++ b/default.prop
-@@ -1,8 +1,8 @@
+@@ -1,12 +1,12 @@
  #
  # ADDITIONAL_DEFAULT_PROPERTIES
  #
@@ -20,8 +20,14 @@ index 7a88b71..ae70c53 100644
 +ro.adb.secure=0
 +ro.secure=0
  ro.allow.mock.location=0
- ro.debuggable=1
+-ro.debuggable=0
++ro.debuggable=1
  ro.zygote=zygote32
+-persist.sys.usb.config=mtp
++persist.sys.usb.config=mtp,adb
+ dalvik.vm.dex2oat-Xms=64m
+ dalvik.vm.dex2oat-Xmx=512m
+ dalvik.vm.image-dex2oat-Xms=64m
 -- 
 1.9.1
 
