@@ -11,8 +11,8 @@ diff --git a/init.target.rc b/init.target.rc
 index 845e484..e8fd80b 100755
 --- a/init.target.rc
 +++ b/init.target.rc
-@@ -49,10 +49,10 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
-     group system inet sdcard_rw
+@@ -51,10 +51,10 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+     seclabel u:r:gpsd:s0
  
  # ZRAM configuration file
 -service configure_zram /system/bin/configure_zram
