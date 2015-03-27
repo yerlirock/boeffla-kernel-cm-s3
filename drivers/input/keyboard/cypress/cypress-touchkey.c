@@ -1160,7 +1160,7 @@ static ssize_t touchkey_led_control(struct device *dev,
 	struct touchkey_i2c *tkey_i2c = dev_get_drvdata(dev);
 	int data;
 	int ret;
-	static const int ledCmd[] = {TK_CMD_LED_ON, TK_CMD_LED_OFF};
+	static const int ledCmd[] = {TK_CMD_LED_OFF, TK_CMD_LED_ON};
 
 #if defined(CONFIG_TARGET_LOCALE_KOR)
 	if (touchkey_probe == false)
@@ -1173,13 +1173,13 @@ static ssize_t touchkey_led_control(struct device *dev,
 		return size;
 	}
 
-	if (data != 1 && data != 2) {
+	if (data != 0 && data != 1) {
 		printk(KERN_DEBUG "[TouchKey] %s wrong cmd %x\n",
 			__func__, data);
 		return size;
 	}
 
-	if (data == 2 && touch_led_handling == TOUCHKEY_LED_ROM)
+	if (data == 0 && touch_led_handling == TOUCHKEY_LED_ROM)
 		touchkey_pressed = TOUCHKEY_HW_TIMEDOUT; // Yank555.lu : h/w light disabled, consider timeout reached
 
 	if (touchkey_led_status 	== TK_CMD_LED_OFF	 &&
@@ -1191,7 +1191,7 @@ static ssize_t touchkey_led_control(struct device *dev,
 
 	} else {
 
-		data = ledCmd[data-1];
+		data = ledCmd[data];
 
 	}
 
