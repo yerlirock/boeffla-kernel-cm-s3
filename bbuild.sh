@@ -10,7 +10,7 @@
 # Parameters to be configured manually
 #######################################
 
-BOEFFLA_VERSION="3.0-test-CM12.0-NG-i9300"
+BOEFFLA_VERSION="4.0-test-CM12.1-NG-i9300"
 EXTENDED_CMDLINE=""
 
 TOOLCHAIN="/opt/toolchains/arm-eabi-4.8/bin/arm-eabi-"
