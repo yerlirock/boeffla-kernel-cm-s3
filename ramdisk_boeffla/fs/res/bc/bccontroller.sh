@@ -11,7 +11,7 @@
 # ********************************
 
 # kernel specification (hardware; type; target; url)
-KERNEL_SPECS="i9300;cm;cm12.0;http://boeffla.df-kunde.de/sgs3/boeffla-kernel-cm-ng/"
+KERNEL_SPECS="i9300;cm;cm12.1;http://boeffla.df-kunde.de/sgs3/boeffla-kernel-cm-ng/"
 
 # kernel features 
 # (1=enable-busybox,2=enable-frandom,3=wipe-cache,4=disable-zram-control)
