@@ -216,7 +216,10 @@
 		echo $(date) Recovery reset zip copied >> $BOEFFLA_LOGFILE
 	fi
 
-# If not explicitely configured to permissive, set SELinux to enforcing and restart mpdecision
+# Remove SELinux enforce lock to allow SELinux mode changes from now on
+	echo "0" > /sys/fs/selinux/bk_locked
+
+# If not explicitely configured to permissive, set SELinux to enforcing
 	if [ ! -f $PERMISSIVE_ENABLER ]; then
 		echo "1" > /sys/fs/selinux/enforce
 		echo $(date) "SELinux: enforcing" >> $BOEFFLA_LOGFILE
