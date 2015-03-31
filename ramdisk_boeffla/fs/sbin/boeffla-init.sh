@@ -216,6 +216,13 @@
 		echo $(date) Recovery reset zip copied >> $BOEFFLA_LOGFILE
 	fi
 
+# TEMPORARY switch kernel to permissive mode by default when freshly installed
+	if [ ! -f /data/.boeffla/installed_40a1 ]; then
+		echo "autocreated" > /data/.boeffla/installed_40a1
+		echo "autocreated" > $PERMISSIVE_ENABLER
+		echo $(date) "First time installation detected, creating selinux permissive setting" >> $BOEFFLA_LOGFILE
+	fi
+
 # Remove SELinux enforce lock to allow SELinux mode changes from now on
 	echo "0" > /sys/fs/selinux/bk_locked
 
