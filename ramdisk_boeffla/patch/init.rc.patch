@@ -11,7 +11,7 @@ diff --git a/init.rc b/init.rc
 index b0f4bc7..1b12f3c 100755
 --- a/init.rc
 +++ b/init.rc
-@@ -655,3 +658,10 @@ service pre-recovery /system/bin/uncrypt
+@@ -650,3 +653,10 @@ service pre-recovery /system/bin/uncrypt
      class main
      disabled
      oneshot

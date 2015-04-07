@@ -1,14 +1,14 @@
-From cfc5e64adadcba860f4f483dafef94a3e7886aa5 Mon Sep 17 00:00:00 2001
+From a8fc1785eefcb7c9801e1e888c9b0cd30e09057e Mon Sep 17 00:00:00 2001
 From: andip71 <andreasp@gmx.de>
-Date: Tue, 10 Mar 2015 11:15:28 +0100
+Date: Tue, 7 Apr 2015 17:55:09 +0200
 Subject: [PATCH] 2
 
 ---
- default.prop | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ default.prop | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/default.prop b/default.prop
-index 2884f32..ae70c53 100644
+index dc19c00..ae70c53 100644
 --- a/default.prop
 +++ b/default.prop
 @@ -1,12 +1,12 @@
@@ -20,7 +20,7 @@ index 2884f32..ae70c53 100644
 +ro.adb.secure=0
 +ro.secure=0
  ro.allow.mock.location=0
- ro.debuggable=0
+ ro.debuggable=1
  ro.zygote=zygote32
 -persist.sys.usb.config=mtp
 +persist.sys.usb.config=mtp,adb
