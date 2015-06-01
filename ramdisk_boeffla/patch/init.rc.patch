@@ -1,17 +1,29 @@
-From 6dfe7a3bf26b4c95a574179d33014f356c9a0074 Mon Sep 17 00:00:00 2001
+From add33bee19fea83f167b49338705079d63b65fef Mon Sep 17 00:00:00 2001
 From: andip71 <andreasp@gmx.de>
-Date: Tue, 23 Dec 2014 11:05:38 +0100
+Date: Mon, 1 Jun 2015 12:46:56 +0200
 Subject: [PATCH] 2
 
 ---
- init.rc | 14 ++++++++++++--
- 1 file changed, 12 insertions(+), 2 deletions(-)
+ init.rc | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
 diff --git a/init.rc b/init.rc
-index b0f4bc7..1b12f3c 100755
+index 029d7de..28c4b3d 100755
 --- a/init.rc
 +++ b/init.rc
-@@ -650,3 +653,10 @@ service pre-recovery /system/bin/uncrypt
+@@ -344,9 +344,9 @@ on boot
+     write /proc/sys/vm/overcommit_memory 1
+     write /proc/sys/vm/min_free_order_shift 4
+     chown root system /sys/module/lowmemorykiller/parameters/adj
+-    chmod 0220 /sys/module/lowmemorykiller/parameters/adj
++    chmod 0660 /sys/module/lowmemorykiller/parameters/adj
+     chown root system /sys/module/lowmemorykiller/parameters/minfree
+-    chmod 0220 /sys/module/lowmemorykiller/parameters/minfree
++    chmod 0660 /sys/module/lowmemorykiller/parameters/minfree
+ 
+     # Tweak background writeout
+     write /proc/sys/vm/dirty_expire_centisecs 200
+@@ -650,3 +650,10 @@ service pre-recovery /system/bin/uncrypt
      class main
      disabled
      oneshot
