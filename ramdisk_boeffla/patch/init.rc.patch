@@ -17,7 +17,7 @@ index 1f635c9..ad6cc4f 100755
      oneshot
 +
 +# Call Boeffla-Kernel init script
-+service boeffla-init /sbin/boeffla-init-starter.sh
++service boeffla-init /sbin/boeffla-init.sh
 +    class main
 +    user root
 +    group root
