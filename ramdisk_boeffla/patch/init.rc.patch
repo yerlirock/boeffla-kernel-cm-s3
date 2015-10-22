@@ -11,8 +11,8 @@ diff --git a/init.rc b/init.rc
 index 1f635c9..ad6cc4f 100755
 --- a/init.rc
 +++ b/init.rc
-@@ -577,3 +577,10 @@ service mdnsd /system/bin/mdnsd
-     socket mdnsd stream 0660 mdnsr inet
+@@ -615,3 +615,10 @@ service mdnsd /system/bin/mdnsd
+     class main
      disabled
      oneshot
 +
